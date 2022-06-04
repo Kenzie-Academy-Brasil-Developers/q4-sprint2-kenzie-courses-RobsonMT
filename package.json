@@ -5,6 +5,11 @@
   "repository": "git@github.com:Kenzie-Academy-Brasil-Developers/q4-sprint2-kenzie-courses.git",
   "author": "Alex <alexander@kenzie.com.br>",
   "license": "MIT",
+  "engines": {
+    "node": "18.2.x",
+    "yarn": "1.22.x",
+    "npm": "8.9.x"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.1",

@@ -6,6 +6,7 @@ declare global {
       validated: User | Course;
       decoded: Partial<User>;
       user: User;
+      course: Course;
     }
   }
 }

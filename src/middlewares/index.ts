@@ -5,12 +5,15 @@ import verifyPermission from "./verifyPermission.middleware";
 import getUserByIdOr404 from "./getUserByIdOr404.middleware";
 import verifyAdmin from "./verifyAdmin.middleware";
 import verifiUserExistsUpdate from "./verifyUserExistsUpdate.middleware";
+import getCourseByIdOr404 from "./getCourseByIdOr404.middleware";
 
 export {
-     validateSchema, 
-     validateToken, 
-     verifiUserExists, 
-     verifyPermission, 
-     getUserByIdOr404, 
-     verifyAdmin,
-     verifiUserExistsUpdate };
+  validateSchema,
+  validateToken,
+  verifiUserExists,
+  verifyPermission,
+  getUserByIdOr404,
+  verifyAdmin,
+  verifiUserExistsUpdate,
+  getCourseByIdOr404,
+};
