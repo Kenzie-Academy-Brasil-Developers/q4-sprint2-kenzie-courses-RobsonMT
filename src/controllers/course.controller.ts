@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { courseService } from "../services";
+import mailerService from "../services/mailer.service";
 
 class CourseController {
   createCourse = async (req: Request, res: Response) => {
@@ -19,9 +20,7 @@ class CourseController {
 
   registerStudent = async (req: Request, res: Response) => {
     const user = await courseService.registerStudent(req);
-    return res
-      .status(200)
-      .json({ message: "Email de inscrição enviado com sucesso." });
+    return mailerService.welcomeEmail(req, res, user);
   };
 }
 
