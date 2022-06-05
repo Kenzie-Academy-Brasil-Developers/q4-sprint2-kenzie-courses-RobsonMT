@@ -2,16 +2,15 @@ import { NextFunction, Request, Response } from "express";
 import { JwtPayload, verify, VerifyErrors } from "jsonwebtoken";
 import { User } from "../entities";
 import { ErrorHandler } from "../errors/errors";
+import * as dotenv from "dotenv";
 
-const validateToken = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+dotenv.config();
+
+const validateToken = (req: Request, res: Response, next: NextFunction) => {
   const token: string = req.headers.authorization?.split(" ")[1];
 
   if (!token) {
-    res.status(400).json({ message: "Missing authorization token." });
+    throw new ErrorHandler(400, "Missing authorization token.");
   }
 
   return verify(

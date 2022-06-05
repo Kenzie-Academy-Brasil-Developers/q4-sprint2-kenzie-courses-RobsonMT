@@ -1,5 +1,4 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
-
 export class innitialCommit1653756003972 implements MigrationInterface {
   name = "innitialCommit1653756003972";
 
