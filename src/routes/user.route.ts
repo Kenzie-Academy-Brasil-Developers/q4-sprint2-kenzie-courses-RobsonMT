@@ -17,12 +17,6 @@ import {
 
 const userRouter = Router();
 
-userRouter.get(
-  "/users",
-  validateToken,
-  verifyPermission,
-  userController.getAll
-);
 userRouter.post(
   "/users",
   validateSchema(createUserSchema),
@@ -35,6 +29,12 @@ userRouter.post(
   userController.loginUser
 );
 userRouter.get(
+  "/users",
+  validateToken,
+  verifyPermission,
+  userController.getAll
+);
+userRouter.get(
   "/users/:id",
   validateToken,
   getUserByIdOr404,
@@ -43,11 +43,11 @@ userRouter.get(
 );
 userRouter.patch(
   "/users/:id",
+  validateToken,
+  verifyAdmin,
   validateSchema(userUpdateSchema),
   verifiUserExistsUpdate,
-  validateToken,
   getUserByIdOr404,
-  verifyAdmin,
   userController.update
 );
 
